@@ -36,7 +36,22 @@ $(function () {
         //insert an input
         var inputName = $('#input-name').val();
         $('#input-name').val('');
+        var inputType = $('#input-type').val();
+        $('#input-type').val('text');
     });
 });
+
+function checkValue (value = ''){
+       if (value == '') {
+			canInsert = false;
+		}else{
+			for (var i = inputs.length - 1; i >= 0; i--) {
+				if(inputs[i].name == value){
+					canInsert = false;
+					break;
+				}
+			}
+		}
+}
 
 
