@@ -1,19 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<title>Api Testing tool</title>
+	<meta charset="utf-8">
+	<script src="js/jquery.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/main.css">
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="js/api.js"></script>
 </head>
+
 <body>
-
-<div class="container">
-  <h1>My First Bootstrap Page</h1>
-  <p>This is some text.</p> 
-</div>
-
+	<div class="container">
+		<h1>Api Testing Tool</h1>
+		<span>Version 0.3</span>
+		<br>
+		<br>
+		<header>
+			<h4>Add an input:</h4>
+			<form class="form-inline" id="form">
+				<!--adding Elements-->
+				<div class="form-group">
+					<select id="input-type" class="form-control">
+						<option value="text" selected="selected">Text</option>
+						<option value="number">Number</option>
+						<option value="Select">Select</option>
+						<option value="file">File</option>
+						<option value="checkbox">Checkbox</option>
+						<option value="radio">Radio</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<input type="text" id="input-name" class="form-control" placeholder="Input Name"/>
+				</div>
+				<div class="form-group">
+					<button type="button" class="btn btn-primary" id="input-insert">insert</button>
+				</div>
+			</form>
+		</header>
+		<main></main>
+		<footer></footer>
+	</div>
 </body>
+
 </html>
