@@ -42,7 +42,7 @@ $(function() {
             return false;
         //insert the input
         switch(inputType){
-            switch 'text':
+            case 'text':
                 break;
             
         }
