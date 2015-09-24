@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="03ae35a8-b0cb-494f-9826-65be3436c602" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/api.js" afterPath="$PROJECT_DIR$/js/api.js" />
-    </list>
+    <list default="true" id="03ae35a8-b0cb-494f-9826-65be3436c602" name="Default" comment="" />
     <ignored path="apiTest.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
