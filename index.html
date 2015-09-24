@@ -2,47 +2,108 @@
 <html lang="en">
 
 <head>
-	<title>Api Testing tool</title>
-	<meta charset="utf-8">
-	<script src="js/jquery.min.js"></script>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/main.css">
-	<script src="bootstrap/js/bootstrap.min.js"></script>
-	<script src="js/api.js"></script>
+    <title>Api Testing tool</title>
+    <meta charset="utf-8">
+    <script src="js/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/api.js"></script>
 </head>
 
 <body>
-	<div class="container">
-		<h1>Api Testing Tool</h1>
-		<span>Version 0.3</span>
-		<br>
-		<br>
-		<header>
-			<h4>Add an input:</h4>
-			<form class="form-inline" id="form">
-				<!--adding Elements-->
-				<div class="form-group">
-					<select id="input-type" class="form-control">
-						<option value="text" selected="selected">Text</option>
-						<option value="number">Number</option>
-						<option value="Select">Select</option>
-						<option value="file">File</option>
-						<option value="checkbox">Checkbox</option>
-						<option value="radio">Radio</option>
-					</select>
-				</div>
-				<div class="form-group">
-					<input type="text" autocomplete="on" id="input-name" class="form-control" placeholder="Input Name"/>
-				</div>
-				<div class="form-group">
-					<button type="button" class="btn btn-primary" id="input-insert">insert</button>
-				</div>
-			</form>
-		</header>
-		<main></main>
-		<footer></footer>
-	</div>
+    <div class="container">
+        <h1>Api Testing Tool</h1>
+        <span>Version 0.3</span>
+        <br>
+        <br>
+        <header>
+            <h4>Add an input:</h4>
+            <form class="form-inline" id="form">
+                <!--adding Elements-->
+                <div class="form-group">
+                    <select id="input-type" class="form-control">
+                        <option value="text" selected="selected">Text</option>
+                        <option value="file">File</option>
+                        <option value="checkbox">Checkbox</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="text" autocomplete="on" id="input-name" class="form-control" placeholder="Input Name" />
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-primary" id="input-insert">insert</button>
+                </div>
+            </form>
+        </header>
+        <main>
+            <form id="main-form">
+                <button type="submit" id="btn-submit" class="btn btn-primary">Submit</button>
+            </form>
+        </main>
+        <footer>
+            <div class="row">
+                <div class="col-sm-4 text-center">
+                    <label>Wesite Base Url</label>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <label>Controller</label>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <label>Method</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="input-group">
+                        <span class="input-group-addon" id="http-addon">Http://</span>
+                        <input type="text" id="website" class="form-control" aria-describedby="http-addon">
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="input-group">
+                        <span class="input-group-addon" id="controller-addon">/</span>
+                        <input type="text" id="website" class="form-control" aria-describedby="controller-addon">
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="input-group">
+                        <span class="input-group-addon" id="method-addon">/</span>
+                        <input type="text" id="website" class="form-control" aria-describedby="method-addon">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 text-center">
+                    <label>Send Method</label>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <label>Form enctype</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <select id="input-method" class="form-control">
+                        <option value="post">Post</option>
+                        <option value="get">Get</option>
+                    </select>
+                </div>
+                <div class="col-sm-4">
+                    <select id="form-enctype" class="form-control">
+                        <option value="regular">Regular</option>
+                        <option value="multipart/form-data">Multipar (used for files)</option>
+                    </select>
+                </div>
+                <div class="col-sm-2 text-center">
+                    <button id="save-settings" class="btn btn-success" data-dismiss="alert">Save Settings</button>
+                </div>
+                <div class="col-sm-2 text-center">
+                    <button id="save-now" class="btn btn-default">Just This Time</button>
+                </div>
+            </div>
+        </footer>
+    </div>
 </body>
 
 </html>
