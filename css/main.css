@@ -1,11 +1,18 @@
 @import "fonts.css";
+
 body {
-  font-family: Ubuntu;
+    font-family: Ubuntu;
 }
-#main-form{
+
+#main-form {
     margin-top: 20px;
     margin-bottom: 20px;
 }
-.input-lbl{
+
+.input-lbl {
     margin-right: 30px;
+}
+
+#btn-submit {
+    padding-left: 30px;
 }
