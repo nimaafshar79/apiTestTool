@@ -15,7 +15,7 @@
 <body>
 <div class="container">
     <h1>Api Testing Tool</h1>
-    <span>Version 0.3</span>
+    <span>Version 1.0</span>
     <br>
     <br>
     <header>
@@ -101,10 +101,10 @@
                 </select>
             </div>
             <div class="col-sm-2 text-center">
-                <button id="save-settings" class="btn btn-success">Save Settings</button>
+                <button id="save-options" class="btn btn-success">Save Settings</button>
             </div>
             <div class="col-sm-2 text-center">
-                <button id="load-settings" class="btn btn-default">Load Settings</button>
+                <button id="load-options" class="btn btn-default">Load Settings</button>
             </div>
         </div>
     </footer>
@@ -113,10 +113,23 @@
         <div class="row">
             <div class="col-sm-4">
                 <div class="checkbox">
-                    <div class="form-group">
-                        <span><input type="checkbox" id="use-localhost" checked="true" value="1">Use Localhost Before address</span>
-                    </div>
+                    <label><input type="checkbox" id="use-localhost"  value="1">Use Localhost Before address</label>
                 </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="checkbox">
+                    <label><input type="checkbox" id="autoload-inputs"  value="1">Autoload inputs on start</label>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="checkbox">
+                    <label><input type="checkbox" id="autoload-options" value="1">Autoload options on start</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3 col-sm-offset-9 ">
+                <button type="button" class="btn btn-primary pull-right" id="save-settings-btn">Save</button>
             </div>
         </div>
     </footer>
