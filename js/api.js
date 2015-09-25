@@ -77,7 +77,7 @@ $(function () {
             var inputWrapper = $('<div class="col-sm-6"></div>');
             var input = $('<input type="' + inputType + '" name="' + inputName + '" id="' + inputName + '" />');
             var deleteBtn = $('<button type="button" data-input-name="' + inputName + '" class="delete-input-btn pull-right btn btn-danger">Delete</button>')
-                .click(deleteInput);
+            .click(deleteInput);
             var deleteButton = $('<div class="col-sm-3 text-center">' + '</div>').append(deleteBtn);
             if (inputType == 'text')
                 input.addClass('form-control');
@@ -88,9 +88,6 @@ $(function () {
         //insert to list
         var object = {type: inputType, name: inputName};
         inputs.push(object);
-    });
-    $('#save-settings').click(function () {
-        alert('saved');
     });
     $('.delete-input-btn').click(deleteInput);
     $('#save-inputs').click(function () {
@@ -153,7 +150,9 @@ $(function () {
             controller: $('#controller').val(),
             method: $('#method').val(),
             send_method: $('#input-method').val(),
-            form_enctype: $('#form-enctype').val()
+            form_enctype: $('#form-enctype').val(),
+            username : $('#username').val(),
+            password : $('#password').val()
         };
         $.ajax({
             url: 'php/saveOptions.php',
@@ -226,7 +225,7 @@ function createInput(inputType, inputName) {
         var inputWrapper = $('<div class="col-sm-6"></div>');
         var input = $('<input type="' + inputType + '" name="' + inputName + '" id="' + inputName + '" />');
         var deleteBtn = $('<button type="button" data-input-name="' + inputName + '" class="delete-input-btn pull-right btn btn-danger">Delete</button>')
-            .click(deleteInput);
+        .click(deleteInput);
         var deleteButton = $('<div class="col-sm-3 text-center">' + '</div>').append(deleteBtn);
         if (inputType == 'text')
             input.addClass('form-control');
@@ -261,6 +260,8 @@ function readOptions() {
             $('#method').val(options.method);
             $('#input-method').val(options.send_method);
             $('#form-enctype').val(options.form_enctype);
+            $('#username').val(options.username),
+            $('#password').val(options.password)
         }
     })
 }

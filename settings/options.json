@@ -1,1 +1,9 @@
-{"base_url":"api.chefapp.ir","controller":"welcome","method":"index","send_method":"post","form_enctype":"multipart/form-data"}
+{
+    "base_url": "api.chefapp.ir",
+    "controller": "welcome",
+    "method": "index",
+    "send_method": "post",
+    "form_enctype": "multipart/form-data",
+    "username": "Nima",
+    "password": "Afshar"
+}

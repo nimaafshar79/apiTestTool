@@ -1,1 +1,5 @@
-{"use_localhost":true,"autoload_inputs":true,"autoload_options":true}
+{
+    "use_localhost": true,
+    "autoload_inputs": true,
+    "autoload_options": true
+}

@@ -11,129 +11,147 @@
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="js/api.js"></script>
 </head>
-
 <body>
-<div class="container">
-    <h1>Api Testing Tool</h1>
-    <span>Version 1.0</span>
-    <br>
-    <br>
-    <header>
-        <h4>Add an input:</h4>
+    <div class="container">
+        <h1>Api Testing Tool</h1>
+        <span>Version 1.1</span>
+        <br>
+        <br>
+        <header>
+            <h4>Add an input:</h4>
+            <form class="form-inline" id="form">
+                <!--adding Elements-->
+                <div class="form-group">
+                    <select id="input-type" class="form-control">
+                        <option value="text" selected="selected">Text</option>
+                        <option value="file">File</option>
+                        <option value="checkbox">Checkbox</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="text" autocomplete="on" id="input-name" class="form-control" placeholder="Input Name"/>
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-primary" id="input-insert">insert</button>
+                </div>
+            </form>
+        </header>
+        <main>
+            <form id="main-form" class="form-horizontal">
+                <div class="btn-toolbar" id="btn-submit">
+                    <button type="submit" id="form-submit" class="btn btn-primary">Submit</button>
+                    <button type="button" id="save-inputs" class="btn btn-success">Save Inputs</button>
+                    <button type="button" id="load-inputs" class="btn btn-default">Load Inputs</button>
+                </div>
+            </form>
+        </main>
+        <footer>
+            <div class="row">
+                <div class="col-sm-4 text-center">
+                    <label>Wesite Base Url</label>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <label>Controller</label>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <label>Method</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="input-group">
+                        <span class="input-group-addon" id="http-addon">Http://</span>
+                        <input type="text" id="website" class="form-control" aria-describedby="http-addon">
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="input-group">
+                        <span class="input-group-addon" id="controller-addon">/</span>
+                        <input type="text" id="controller" class="form-control" aria-describedby="controller-addon">
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="input-group">
+                        <span class="input-group-addon" id="method-addon">/</span>
+                        <input type="text" id="method" class="form-control" aria-describedby="method-addon">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 text-center">
+                    <label>Send Method</label>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <label>Form enctype</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <select id="input-method" class="form-control">
+                        <option value="post">Post</option>
+                        <option value="get">Get</option>
+                    </select>
+                </div>
+                <div class="col-sm-4">
+                    <select id="form-enctype" class="form-control">
+                        <option value="regular">Regular</option>
+                        <option value="multipart/form-data">Multipar (used for files)</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 text-center">
+                    <label>Username</label>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <label>Password</label>
+                </div>
+            </div>
+            <div class="row">
+                <!-- Username -->
+                <div class="col-sm-4">
+                    <input type="text" id="username" class="form-control"  />
+                </div>
+                <!-- Password -->
+                <div class="col-sm-4">
+                    <input type="text" id="password" class="form-control" />
+                </div>
+                <!-- Save Buttons -->
+                <div class="col-sm-2">
+                    <button id="save-options" class="btn btn-success">Save Settings</button>
+                </div>
+                <div class="col-sm-2 text-center">
+                    <button id="load-options" class="btn btn-default">Load Settings</button>
+                </div>
+            </div>
+        </footer>
+        <footer>
+            <h3>Options</h3>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="checkbox">
+                        <label><input type="checkbox" id="use-localhost"  value="1">Use Localhost Before address</label>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="checkbox">
+                        <label><input type="checkbox" id="autoload-inputs"  value="1">Autoload inputs on start</label>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="checkbox">
+                        <label><input type="checkbox" id="autoload-options" value="1">Autoload options on start</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3 col-sm-offset-9 ">
+                    <button type="button" class="btn btn-primary pull-right" id="save-settings-btn">Save</button>
+                </div>
+            </div>
+        </footer>
 
-        <form class="form-inline" id="form">
-            <!--adding Elements-->
-            <div class="form-group">
-                <select id="input-type" class="form-control">
-                    <option value="text" selected="selected">Text</option>
-                    <option value="file">File</option>
-                    <option value="checkbox">Checkbox</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <input type="text" autocomplete="on" id="input-name" class="form-control" placeholder="Input Name"/>
-            </div>
-            <div class="form-group">
-                <button type="button" class="btn btn-primary" id="input-insert">insert</button>
-            </div>
-        </form>
-    </header>
-    <main>
-        <form id="main-form" class="form-horizontal">
-            <div class="btn-toolbar" id="btn-submit">
-                <button type="submit" id="form-submit" class="btn btn-primary">Submit</button>
-                <button type="button" id="save-inputs" class="btn btn-success">Save Inputs</button>
-                <button type="button" id="load-inputs" class="btn btn-default">Load Inputs</button>
-            </div>
-        </form>
-    </main>
-    <footer>
-        <div class="row">
-            <div class="col-sm-4 text-center">
-                <label>Wesite Base Url</label>
-            </div>
-            <div class="col-sm-4 text-center">
-                <label>Controller</label>
-            </div>
-            <div class="col-sm-4 text-center">
-                <label>Method</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-4">
-                <div class="input-group">
-                    <span class="input-group-addon" id="http-addon">Http://</span>
-                    <input type="text" id="website" class="form-control" aria-describedby="http-addon">
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="input-group">
-                    <span class="input-group-addon" id="controller-addon">/</span>
-                    <input type="text" id="controller" class="form-control" aria-describedby="controller-addon">
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="input-group">
-                    <span class="input-group-addon" id="method-addon">/</span>
-                    <input type="text" id="method" class="form-control" aria-describedby="method-addon">
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-4 text-center">
-                <label>Send Method</label>
-            </div>
-            <div class="col-sm-4 text-center">
-                <label>Form enctype</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-4">
-                <select id="input-method" class="form-control">
-                    <option value="post">Post</option>
-                    <option value="get">Get</option>
-                </select>
-            </div>
-            <div class="col-sm-4">
-                <select id="form-enctype" class="form-control">
-                    <option value="regular">Regular</option>
-                    <option value="multipart/form-data">Multipar (used for files)</option>
-                </select>
-            </div>
-            <div class="col-sm-2 text-center">
-                <button id="save-options" class="btn btn-success">Save Settings</button>
-            </div>
-            <div class="col-sm-2 text-center">
-                <button id="load-options" class="btn btn-default">Load Settings</button>
-            </div>
-        </div>
-    </footer>
-    <footer>
-        <h3>Options</h3>
-        <div class="row">
-            <div class="col-sm-4">
-                <div class="checkbox">
-                    <label><input type="checkbox" id="use-localhost"  value="1">Use Localhost Before address</label>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="checkbox">
-                    <label><input type="checkbox" id="autoload-inputs"  value="1">Autoload inputs on start</label>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="checkbox">
-                    <label><input type="checkbox" id="autoload-options" value="1">Autoload options on start</label>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-3 col-sm-offset-9 ">
-                <button type="button" class="btn btn-primary pull-right" id="save-settings-btn">Save</button>
-            </div>
-        </div>
-    </footer>
-</div>
+    </div>
 </body>
 
 </html>
