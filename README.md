@@ -1,6 +1,4 @@
-<snippet>
-  <content><![CDATA[
-# ${1:Api Testing Tool}
+# Api Testing Tool
 
 TODO: Write a project description
 
